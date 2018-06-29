@@ -13,6 +13,11 @@
 		http://www.springframework.org/schema/aop
 		http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
 
+    <context:component-scan
+            base-package="org.activiti.conf,org.activiti.rest.editor,org.activiti.rest.service">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    
 	<!-- 单例json对象 -->
     <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper"/>
 
