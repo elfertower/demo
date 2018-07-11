@@ -13,7 +13,7 @@
 		<param-value>
             classpath:spring-jdbc.xml
             classpath:spring-mybatis.xml
-            classpath:spring-orm.xml
+            <!--classpath:spring-orm.xml-->
             classpath:/applicationContexts/applicationContext-*.xml
         </param-value>
 	</context-param>

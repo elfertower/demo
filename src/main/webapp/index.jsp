@@ -1,5 +1,22 @@
+<!DOCTYPE html>
 <html>
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+</head>
 <body>
-<h2>Hello World!</h2>
+<div id="app">
+  <p>{{ message }}</p>
+</div>
+
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue.js!'
+  }
+})
+</script>
 </body>
 </html>
