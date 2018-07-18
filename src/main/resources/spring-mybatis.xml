@@ -20,9 +20,9 @@
         	<ref bean="dataSource"/>
         </property>
     </bean>
-    <!--使用注释事务    --> 
+    <!--使用注释事务    
 	<tx:annotation-driven  transaction-manager="jdbcTransactionManager" />
-	
+	--> 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="configLocation" value="classpath:mybatis.xml"/>
         <property name="dataSource">

@@ -31,7 +31,9 @@
         <property name="dataSource">
         	<ref bean="dataSource"/>
         </property>
-        <property name="transactionManager" ref="jdbcTransactionManager"/>
+        <property name="transactionManager">
+        	<ref bean="jpaTransactionManager"/>
+        </property>
         <property name="databaseSchemaUpdate" value="true"/>
         <property name="jobExecutorActivate" value="true"/>
         <property name="history" value="full"/>
@@ -79,13 +81,13 @@
         </property>
 		-->
 		
-        <!-- JPA 
+        <!-- JPA -->
         <property name="jpaEntityManagerFactory" >
         	<ref bean="entityManagerFactory" />
         </property>
         <property name="jpaHandleTransaction" value="false" />
         <property name="jpaCloseEntityManager" value="false" />
-		-->
+		
 		
         <!-- 全局事件 -->
         <property name="typedEventListeners">
