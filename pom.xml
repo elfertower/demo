@@ -84,6 +84,7 @@
 			<version>${junit-version}</version>
 			<scope>test</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -91,6 +92,13 @@
 			<scope>provided</scope>
 		</dependency>
 		
+		<dependency>
+            <groupId>javax.websocket</groupId>
+            <artifactId>javax.websocket-api</artifactId>
+            <version>1.1</version>
+            <scope>provided</scope> 
+            <!-- 注意,scope必须为provided,否则runtime会冲突，如果使用tomcat 8,还需要将TOMCAT_HOME/lib下的javax.websocket-api.jar一并删除 -->
+        </dependency>
 		<!--Mybatis-->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -139,7 +147,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>${springframework-version}</version>
-			<scope>test</scope>
+			<!-- <scope>test</scope>-->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -178,7 +186,18 @@
 			<version>${springframework-version}</version>
 			<scope>test</scope>
 		</dependency>
-
+        <!-- 使用spring websocket依赖的jar包 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-websocket</artifactId>
+            <version>${springframework-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-messaging</artifactId>
+            <version>${springframework-version}</version>
+        </dependency>            
+		
 		<!--swagger 依赖 -->
 		<dependency>
 			<groupId>io.springfox</groupId>
@@ -505,6 +524,12 @@
             <artifactId>infinispan-core</artifactId>
             <version>5.1.7.Final</version>
         </dependency>
+        <!-- AVAYA JTAPI  -->
+        <dependency>
+            <groupId>com.avaya.jtapi</groupId>
+            <artifactId>ecsjtapia</artifactId>
+            <version>6.2.0.54</version>
+        </dependency>
 	</dependencies>
 
 	<build>
@@ -559,6 +584,17 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
 					<version>3.0.0</version>
+				</plugin>
+				<!-- tomcat7插件 -->
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.2</version> 
+					<configuration>
+						<port>80</port>
+						<path>/demo</path>
+						<uriEncoding>UTF-8</uriEncoding>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
