@@ -524,12 +524,13 @@
             <artifactId>infinispan-core</artifactId>
             <version>5.1.7.Final</version>
         </dependency>
-        <!-- AVAYA JTAPI  -->
+        <!-- AVAYA JTAPI  
         <dependency>
             <groupId>com.avaya.jtapi</groupId>
             <artifactId>ecsjtapia</artifactId>
             <version>6.2.0.54</version>
         </dependency>
+        -->
 	</dependencies>
 
 	<build>
